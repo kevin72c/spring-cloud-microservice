@@ -1,0 +1,25 @@
+server:
+  port: 8888
+
+#仅输出ERROR日志
+logging:
+  level:
+    com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver: ERROR
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:kevin72c/spring-cloud-microservice.git
+          username: 512523616@qq.com
+          password: 7Gm87FFNfm5a
+          search-paths: config-repo
+          timeout: 30
+
+security:
+  basic:
+    enabled: true               # 开启基于HTTP basic的认证
+  user:
+    name: userID                # 配置登录的账号
+    password: password          # 配置登录的密码

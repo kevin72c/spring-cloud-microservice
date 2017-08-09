@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: discovery-eureka    # 对应config server所获取的配置文件的{application}
+  profiles:
+    active: dev
+
+# 配置中心服务的地址
+  cloud:
+    config:
+      uri: http://127.0.0.1:8888/
+      username: userID
+      password: password
+      profile: ${spring.profiles.active}            # profile对应config server所获取的配置文件中的{profile}
+      label: master           # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
+      name: application, ${spring.application.name}
+
+security:
+  basic:
+    enabled: true            # 开启基于HTTP basic的认证
+  user:
+    name: userID             # 配置登录的账号
+    password: password       # 配置登录的密码
+
