@@ -12,8 +12,8 @@ spring:
       server:
         git:
           uri: git@github.com:kevin72c/spring-cloud-microservice.git
-          username: yourE@qq.com
-          password: ...
+          username: yourEmail@qq.com
+          password: yourPassword
           search-paths: config-repo
           timeout: 30
 
